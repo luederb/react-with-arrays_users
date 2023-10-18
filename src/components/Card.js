@@ -1,7 +1,7 @@
 import "./Card.css";
 import Tag from "./Tag";
 import Button from "./Button";
-function Card({ name, roles, about, id }) {
+function Card({ name, roles, about }) {
   return (
     <article className="card">
       <h2>{name}</h2>
