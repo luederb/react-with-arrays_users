@@ -1,18 +1,19 @@
 import "./Card.css";
 import Tag from "./Tag";
 import Button from "./Button";
-function Card({ user }) {
+function Card({ name, roles, about, id }) {
   return (
     <article className="card">
-      <h2>{user.name}</h2>
+      <h2>{name}</h2>
       <ul className="card__taglist">
-        <Tag tag={user.roles[0]} />
+        {roles.map((role) => (
+          <Tag tag={role} key={role} />
+        ))}
       </ul>
-      <p>{user.about}</p>
+      <p>{about}</p>
       <Button>edit</Button>
       <Button buttonType="danger">invoice</Button>
     </article>
   );
 }
-
 export default Card;
